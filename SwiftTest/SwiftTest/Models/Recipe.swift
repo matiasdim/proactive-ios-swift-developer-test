@@ -58,5 +58,12 @@ class Recipe: NSObject {
             }
         }
     }
+    
+//    static func getRecipeImage(url: String, callback: @escaping (UIImage) -> ()) {
+//        NetworkManager.getRecipeImage(url: url) { (response) in
+//            let image = UIImage(data: (response as AnyObject).data!, scale: 1.0)!
+//            callback(image)
+//        }
+//    }
 
 }

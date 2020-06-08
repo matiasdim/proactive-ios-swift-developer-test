@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 class DetailViewController: UIViewController {
     
@@ -22,18 +23,31 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = self.recipe?.title
+        self.navigationController?.navigationBar.barTintColor = .orange
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.hidesBackButton = true
+        
         if NetworkManager.isInternetReachable(), let recipe = self.recipe {
+            KRProgressHUD.show(withMessage: "Getting recipe details...")
             Recipe.recipeDetail(id: recipe.id) { [weak self] (recipe) in
+                KRProgressHUD.dismiss()
                 self?.recipe = recipe
-                self?.setupView()
+//                if let imageUrl = self?.recipe?.image {
+//                    Recipe.getRecipeImage(url: imageUrl) { (image) in
+//                        self?.setupView(image: image)
+//                    }
+//                } else {
+                    self?.setupView()
+//                }
             }
         }
     }
     
-    func setupView(){
+    func setupView(image: UIImage?=nil){
         self.navigationController?.title = self.recipe?.title
         self.instructionsLabel.text = self.recipe?.instructions
-        
+        self.imageView.image = image
         //set start
         if let rating = self.recipe?.rating {
             for i in 1...rating {
@@ -42,6 +56,7 @@ class DetailViewController: UIViewController {
                 }
             }
         }
+        
         
     }
 

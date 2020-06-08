@@ -6,19 +6,50 @@
 //  Copyright © 2020 Matías Gil Echavarría. All rights reserved.
 //
 
+
+/*
+
+ THANKS!
+ 
+ I would have liked to have more time to
+ 
+ 1. Complete all the requirements (Search component is missing
+ 2. Set the UI more accurate (And remove some runtime constraints conflicts (this is bad!)
+ 3. Refactor code, mainly network manager to have thisworking more general and probably via singleton pattern
+ 
+ 
+ Matías.
+*/
+
 import UIKit
+import KRProgressHUD
 
-class RootViewController: UITableViewController {
+class RootViewController: UITableViewController, UISearchResultsUpdating {
 
-    var recipes:[Recipe] = []
+    let searchController = UISearchController(searchResultsController: nil)
+    var recipes: [Recipe] = []
+    var searchedRecipes: [Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Recipies"
+        self.navigationController?.navigationBar.barTintColor = .orange
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]        
+        
         if NetworkManager.isInternetReachable() {
+            KRProgressHUD.show(withMessage: "Getting recipes...")
             Recipe.listRecipes { [weak self] (recipes) in
+                KRProgressHUD.dismiss()
                 self?.recipes = recipes
                 self?.tableView.reloadData()
+                
+                self?.searchController.searchResultsUpdater = self
+                self?.searchController.obscuresBackgroundDuringPresentation = false
+                self?.searchController.searchBar.placeholder = "Search"
+                self?.navigationItem.searchController = self?.searchController
+                self?.definesPresentationContext = true
             }
         }
 
@@ -50,43 +81,6 @@ class RootViewController: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -98,5 +92,8 @@ class RootViewController: UITableViewController {
         }
     }
     
-
+    func updateSearchResults(for searchController: UISearchController) {
+      // TODO
+    }
+    
 }

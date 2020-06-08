@@ -64,44 +64,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whG-DD-TP7">
-                                <rect key="frame" x="0.0" y="88" width="290" height="200"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="C8w-05-avC"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6op-sj-qUf">
-                                <rect key="frame" x="20" y="296" width="250" height="50"/>
+                                <rect key="frame" x="20" y="296" width="374" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="unfill_Star" translatesAutoresizingMaskIntoConstraints="NO" id="bEn-1Y-fit">
-                                        <rect key="frame" x="0.0" y="0.0" width="50.000000000000028" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="VPJ-7T-URn"/>
                                             <constraint firstAttribute="height" constant="50" id="z4N-Nf-JIo"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfill_Star" translatesAutoresizingMaskIntoConstraints="NO" id="k7R-zf-bMb">
-                                        <rect key="frame" x="50" y="0.0" width="50.000000000000028" height="50"/>
+                                        <rect key="frame" x="75" y="0.0" width="74.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="9BG-Tg-qwm"/>
                                             <constraint firstAttribute="height" constant="50" id="MHV-MV-tZo"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfill_Star" translatesAutoresizingMaskIntoConstraints="NO" id="05F-PT-Mz4">
-                                        <rect key="frame" x="100" y="0.0" width="50.000000000000028" height="50"/>
+                                        <rect key="frame" x="149.5" y="0.0" width="75" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="YjL-Ju-Q4p"/>
                                             <constraint firstAttribute="height" constant="50" id="cM6-Fj-Cxg"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfill_Star" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-Se-S6l">
-                                        <rect key="frame" x="150" y="0.0" width="50.000000000000028" height="50"/>
+                                        <rect key="frame" x="224.5" y="0.0" width="74.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="JaX-BI-v0p"/>
                                             <constraint firstAttribute="height" constant="50" id="iC6-m5-KYJ"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfill_Star" translatesAutoresizingMaskIntoConstraints="NO" id="Ptt-x0-33o">
-                                        <rect key="frame" x="200" y="0.0" width="50.000000000000028" height="50"/>
+                                        <rect key="frame" x="299" y="0.0" width="75" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="DZN-nm-cEp"/>
                                             <constraint firstAttribute="width" constant="50" id="ar2-Dx-vZM"/>
@@ -112,8 +112,8 @@
                                     <constraint firstAttribute="height" constant="50" id="Ijr-Zm-Evs"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCG-go-2rR">
-                                <rect key="frame" x="20" y="366" width="250" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCG-go-2rR">
+                                <rect key="frame" x="20" y="366" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

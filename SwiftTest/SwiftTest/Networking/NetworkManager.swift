@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class NetworkManager: NSObject {
     static let sharedManager = NetworkManager()
@@ -37,6 +38,15 @@ class NetworkManager: NSObject {
     
     static func getRecipe(id: Int, callback: @escaping (Any?) -> ()) {
         NetworkManager.baseGetRequest(url: "\(NetworkManager.baseURL)/recipes/\(id)", callback: callback)
+    }
+    
+    static func getRecipeImage(url: String, callback: @escaping (Any) -> ()) {
+        AF.request(url).responseImage { (response) in
+            if case .success(let _) = response.result {
+                
+                callback(response)
+            } 
+        }
     }
 
     
